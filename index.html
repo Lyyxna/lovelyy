@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>heart</title>
+  <style>
+    body {
+      background-image: url('https://i.pinimg.com/736x/fd/a4/58/fda4583561e52322585e47cefcc1810d.jpg');
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heart {
+      display: grid;
+      grid-template-columns: repeat(7, 55px);
+      grid-template-rows: repeat(6, 55px);
+      gap: 3px;
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      overflow: hidden;
+    }
+
+    .block {
+      width: 55px;
+      height: 55px;
+      background-color: #b90e0a;
+      opacity: 0;
+      animation: appear 0.3s forwards;
+    }
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .text {
+      position: absolute;
+      top: 13%%;
+      left: 0%;
+      width: 100%;
+      height: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: beige;
+      font-size: 20px;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      padding: 10px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 5.9s; /* attendre que le cœur soit complet */
+      pointer-events: none;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">
+    <!-- Ligne 1 -->
+    <div></div><div class="block" style="animation-delay: 0.1s;"></div><div class="block" style="animation-delay: 0.2s;"></div><div></div><div class="block" style="animation-delay: 0.3s;"></div><div class="block" style="animation-delay: 0.4s;"></div><div></div>
+    <!-- Ligne 2 -->
+    <div class="block" style="animation-delay: 0.7s;"></div><div class="block" style="animation-delay: 0.9s;"></div><div class="block" style="animation-delay: 1.1s;"></div><div class="block" style="animation-delay: 1.3s;"></div><div class="block" style="animation-delay: 1.5s;"></div><div class="block" style="animation-delay: 4s;"></div><div class="block" style="animation-delay: 1.7s;"></div>
+    <!-- Ligne 3 -->
+    <div class="block" style="animation-delay: 1.9s;"></div><div class="block" style="animation-delay: 2.1s;"></div><div class="block" style="animation-delay: 2.3s;"></div><div class="block" style="animation-delay: 2.5ss;"></div><div class="block" style="animation-delay: 2.7s;"></div><div class="block" style="animation-delay: 3s;"></div><div class="block" style="animation-delay: 3.3s;"></div>
+    <!-- Ligne 4 -->
+    <div></div><div class="block" style="animation-delay: 3.6s;"></div><div class="block" style="animation-delay: 3.9s;"></div><div class="block" style="animation-delay: 4.1s;"></div><div class="block" style="animation-delay: 4.3s;"></div><div class="block" style="animation-delay: 4.5s;"></div><div></div>
+    <!-- Ligne 5 -->
+    <div></div><div></div><div class="block" style="animation-delay: 4.9s;"></div><div class="block" style="animation-delay: 5.1s;"></div><div class="block" style="animation-delay:5.3;"></div><div></div><div></div>
+    <!-- Ligne 6 -->
+    <div></div><div></div><div></div><div class="block" style="animation-delay: 5.6s;"></div><div></div><div></div><div></div>
+
+    <div class="text">
+      Parmi des milliers de cœurs,<br>
+      c’est le tien que mon âme a reconnu.<br>
+      Et nul autre ne saura jamais<br>
+      occuper cette place que ton cœur a gravée.❤
+    </div>
+  </div>
+</body>
+</html>
