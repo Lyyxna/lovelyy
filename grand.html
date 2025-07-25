@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question: Qui est plus grand ?</title>
+    <style>
+        body {
+            background-color: #ADD8E6; /* Bleu clair */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #003366; /* Encadrement de la question */
+            border-radius: 10px;
+            background-color: #f0f8ff;
+            position: relative;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #003366; /* Bleu nuit pour les boutons */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .button:hover {
+            background-color: #00509e;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            animation: shake 0.5s;
+        }
+
+        .success {
+            color: green;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="question">Qui est plus grand ?</div>
+        <button id="yosriButton" class="button" onclick="moveYosri()">Yosri</button>
+        <button class="button" onclick="showSuccess()">Lina</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function showError() {
+            const result = document.getElementById("result");
+            result.innerHTML = "Erreur ! Yosri n'est pas plus grand.";
+            result.className = "result error";
+        }
+
+        function showSuccess() {
+            const result = document.getElementById("result");
+            result.innerHTML = "Bonne réponse ! Lina est plus grande.";
+            result.className = "result success";
+        }
+
+        function moveYosri() {
+            // Affiche l'erreur
+            showError();
+
+            // Sélectionne le bouton "Yosri"
+            const yosriButton = document.getElementById("yosriButton");
+
+            // Génère de nouvelles positions aléatoires pour le bouton
+            const newX = Math.random() * 300 - 150; // Ajuste la plage du mouvement
+            const newY = Math.random() * 300 - 150;
+
+            // Applique la translation au bouton
+            yosriButton.style.transform = `translate(${newX}px, ${newY}px)`;
+        }
+    </script>
+
+</body>
+</html>
